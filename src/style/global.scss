@@ -1,7 +1,7 @@
 
 $theme-color: #050505; // 主题色
 $theme-reverse-color: #ffffff;
-
+$theme-light-color:#E3E3E3;
 // flex居中
 @mixin flex-center ($vertical: false){
   display: flex;
@@ -25,4 +25,9 @@ $theme-reverse-color: #ffffff;
 @font-face {
     font-family: 'line-outside';
     src: url(@/assets/fonts/line-outside.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: 'lattice';
+    src: url(@/assets/fonts/lattice.ttf) format('trueType');
 }
