@@ -36,6 +36,10 @@
                     <div class="text">17</div>
                 </div>
             </div>
+            <div class="arrowDownBox" @click="rollDown">
+                <div class="arrowDown"></div>
+                <div class="text">点我向下滚动～</div>
+            </div>
         </div>
     </div>
 
@@ -62,21 +66,29 @@ const mouseLeaved = () => {
     isActive.value = false
 }
 
+const rollDown = () =>{
+    window.scrollTo({
+        top: window.innerHeight, // 滚动到距离顶部100vh的位置
+        behavior: 'smooth' // 平滑滚动效果
+      });
+}
+
 
 </script>
 <style lang="scss" scoped>
 .homeTop {
-    @include flex-between(true);
-    ;
+    @include flex-between(true);;
     width: 100vw;
     height: 100vh;
-
+    $barHeight: 103.7px;
+    overflow: hidden;
     .navBar {
         $padding: 3.6vw;
+       
         @include flex-between();
         width: calc(100% - 2*$padding);
         padding: 0 $padding;
-        height: 5.4vw;
+        height: $barHeight;
         background: transparent;
         color: $theme-reverse-color;
 
@@ -84,16 +96,16 @@ const mouseLeaved = () => {
             @include flex-center();
 
             .dot {
-                width: 1.4vw;
-                height: 1.4vw;
+                width: 26.9px;
+                height: 26.9px;
                 background: $theme-reverse-color;
                 border-radius: 50%;
-                margin: 1.1vw;
+                margin: 21.1px;
             }
 
             .text {
                 font-family: "line-outside" !important;
-                font-size: 2.6vw;
+                font-size: 49.9px;
             }
         }
 
@@ -136,8 +148,9 @@ const mouseLeaved = () => {
     .cover {
         @include flex-center();
         width: 100%;
-        height: calc(100vh - 6vw);
+        height: calc(100vh - $barHeight);
         background-color: transparent;
+        position: relative;
 
         .contentBox {
             @include flex-center(true);
@@ -175,7 +188,44 @@ const mouseLeaved = () => {
             }
 
         }
+
+        .arrowDownBox {
+            @include flex-center();
+            position: absolute;
+            bottom: 30px;
+            right: 50%;
+            transform: translateX(-50%);
+            animation: floatUpDown 2s ease-in-out infinite alternate;
+            cursor: pointer;
+
+            .arrowDown {
+                width: 0;
+                height: 0;
+                border-left: 20px solid transparent;
+                border-right: 20px solid transparent;
+                border-top: 25px solid #fff;
+            }
+            .text{
+                $textWidth:130px;
+                width: $textWidth;
+                position: absolute;
+                right: -$textWidth - 10px;
+                color: #ffffff90;
+            }
+        }
+
     }
 
+}
+
+@keyframes floatUpDown {
+    0% {
+        transform: translateY(0);
+    }
+
+    100% {
+        transform: translateY(10px);
+        /* 调整箭头上下浮动的距离 */
+    }
 }
 </style>
