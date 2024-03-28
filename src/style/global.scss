@@ -1,0 +1,23 @@
+
+$theme-color: #050505; // 主题色
+
+
+// flex居中
+@mixin flex-center ($vertical: false){
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  @if $vertical {
+      flex-direction: column;
+  }
+}
+
+@mixin flex-between ($vertical:false){
+    display:  flex;
+    justify-content: space-between;
+    align-items: center;
+    @if $vertical {
+        flex-direction: column;
+    }
+}
+
