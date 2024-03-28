@@ -1,6 +1,6 @@
 
 $theme-color: #050505; // 主题色
-
+$theme-reverse-color: #ffffff;
 
 // flex居中
 @mixin flex-center ($vertical: false){
@@ -21,3 +21,8 @@ $theme-color: #050505; // 主题色
     }
 }
 
+
+@font-face {
+    font-family: 'line-outside';
+    src: url(@/assets/fonts/line-outside.ttf) format('truetype');
+}

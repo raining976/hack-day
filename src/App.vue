@@ -1,6 +1,7 @@
 <template>
   <HomeTopView></HomeTopView>
   <ContentsView></ContentsView>
+  <demo></demo>
 </template>
 
 <script setup>
@@ -9,4 +10,8 @@
 
 </script>
 
-<style scoped></style>
+<style lang="scss">
+*{
+  color: #fff;
+}
+</style>
