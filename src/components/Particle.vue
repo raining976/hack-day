@@ -532,7 +532,6 @@ onMounted(() => {
     width: 60px;
     height: 75px;
     animation: rotate 4s linear infinite,translateX 10s linear infinite;
-    /* 使用 rotate 动画 */
 
 }
 

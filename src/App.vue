@@ -1,7 +1,7 @@
 <template>
   <HomeTopView></HomeTopView>
   <ContentsView></ContentsView>
-  <demo></demo>
+  <Particle></Particle>
 </template>
 
 <script setup>

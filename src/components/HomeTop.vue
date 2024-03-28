@@ -25,6 +25,16 @@
                 <div class="logo">
                     <img src="@/assets/icons/logo.png" alt="">
                 </div>
+                <div class="line"></div>
+                <div class="textBox">
+                    <div class="text">OUC</div>
+                    <div class="dot"></div>
+                    <div class="text">2024</div>
+                    <div class="dot"></div>
+                    <div class="text">04</div>
+                    <div class="dot"></div>
+                    <div class="text">17</div>
+                </div>
             </div>
         </div>
     </div>
@@ -56,7 +66,8 @@ const mouseLeaved = () => {
 </script>
 <style lang="scss" scoped>
 .homeTop {
-    @include flex-between(true);;
+    @include flex-between(true);
+    ;
     width: 100vw;
     height: 100vh;
 
@@ -127,8 +138,41 @@ const mouseLeaved = () => {
         width: 100%;
         height: calc(100vh - 6vw);
         background-color: transparent;
-        .contentBox {
 
+        .contentBox {
+            @include flex-center(true);
+            width: 45vw;
+
+            .logo img {
+                width: 44.2vw;
+                height: 6.6vw;
+            }
+
+            .line {
+                // 848 × 126
+                width: 40vw;
+                height: 0.5vw;
+                background-color: #fff;
+                margin: 2.1vw 0;
+            }
+
+            .textBox {
+                width: 100%;
+                @include flex-center();
+
+                .text {
+                    font-family: line-outside;
+                    font-size: 2.6vw;
+                }
+
+                .dot {
+                    width: 0.8vw;
+                    height: 0.8vw;
+                    border-radius: 8px;
+                    background: #FFFFFF;
+                    margin: 0 1.9vw;
+                }
+            }
 
         }
     }
