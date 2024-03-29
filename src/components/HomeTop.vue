@@ -118,19 +118,32 @@ const rollDown = () =>{
             cursor: pointer;
 
             &:hover {
-                grid-template-columns: repeat(auto-fill, 6px);
+                grid-template-columns: repeat(auto-fill, 9px);
             }
 
             .square {
                 transition: 0.2s;
-                transform-origin: center;
+                transform-origin: center center;
                 width: 9px;
                 height: 9px;
                 background-color: $theme-reverse-color;
-
+                
                 &.bigSquare {
                     transform: scale(2.3);
 
+                }
+                $offset: 1.5px;
+                &.bigSquare:nth-child(1){
+                    transform:  scale(2.3) translateX($offset) translateY($offset);
+                }
+                &.bigSquare:nth-child(3){
+                    transform:  scale(2.3) translateX(-$offset) translateY($offset);
+                }
+                &.bigSquare:nth-child(7){
+                    transform:  scale(2.3) translateX($offset);
+                }
+                &.bigSquare:nth-child(9){
+                    transform:  scale(2.3) translateX(-$offset);
                 }
 
                 &.smallSquare {
