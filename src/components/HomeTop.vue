@@ -45,11 +45,10 @@
 
 </template>
 <script setup>
-
 import { ref, onMounted } from 'vue'
-
+import { useStatusStore } from "@/store"
 const time = ref("2024")
-
+const status = useStatusStore();
 
 const isActive = ref(false)
 
@@ -60,31 +59,35 @@ onMounted(() => {
 
 const mouesEntered = () => {
     isActive.value = true
+    status.setIsShowCover(true)
 }
 
 const mouseLeaved = () => {
     isActive.value = false
+    status.setIsShowCover(false)
 }
 
-const rollDown = () =>{
+const rollDown = () => {
     window.scrollTo({
         top: window.innerHeight, // 滚动到距离顶部100vh的位置
         behavior: 'smooth' // 平滑滚动效果
-      });
+    });
 }
 
 
 </script>
 <style lang="scss" scoped>
 .homeTop {
-    @include flex-between(true);;
+    @include flex-between(true);
+    ;
     width: 100vw;
     height: 100vh;
     $barHeight: 103.7px;
     overflow: hidden;
+
     .navBar {
         $padding: 3.6vw;
-       
+
         @include flex-between();
         width: calc(100% - 2*$padding);
         padding: 0 $padding;
@@ -127,23 +130,28 @@ const rollDown = () =>{
                 width: 9px;
                 height: 9px;
                 background-color: $theme-reverse-color;
-                
+
                 &.bigSquare {
                     transform: scale(2.3);
 
                 }
+
                 $offset: 1.5px;
-                &.bigSquare:nth-child(1){
-                    transform:  scale(2.3) translateX($offset) translateY($offset);
+
+                &.bigSquare:nth-child(1) {
+                    transform: scale(2.3) translateX($offset) translateY($offset);
                 }
-                &.bigSquare:nth-child(3){
-                    transform:  scale(2.3) translateX(-$offset) translateY($offset);
+
+                &.bigSquare:nth-child(3) {
+                    transform: scale(2.3) translateX(-$offset) translateY($offset);
                 }
-                &.bigSquare:nth-child(7){
-                    transform:  scale(2.3) translateX($offset);
+
+                &.bigSquare:nth-child(7) {
+                    transform: scale(2.3) translateX($offset);
                 }
-                &.bigSquare:nth-child(9){
-                    transform:  scale(2.3) translateX(-$offset);
+
+                &.bigSquare:nth-child(9) {
+                    transform: scale(2.3) translateX(-$offset);
                 }
 
                 &.smallSquare {
@@ -218,8 +226,9 @@ const rollDown = () =>{
                 border-right: 20px solid transparent;
                 border-top: 25px solid #fff;
             }
-            .text{
-                $textWidth:130px;
+
+            .text {
+                $textWidth: 130px;
                 width: $textWidth;
                 position: absolute;
                 right: -$textWidth - 10px;
