@@ -34,6 +34,7 @@ $barHeight: 103.7px; // 顶部bar的高度
 @font-face {
     font-family: 'lattice';
     src: url(@/assets/fonts/lattice.ttf) format('trueType');
+    font-display: fallback; 
 }
 
 @font-face {
