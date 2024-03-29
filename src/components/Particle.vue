@@ -525,7 +525,7 @@ onMounted(() => {
 }
 
 .person {
-    position: absolute;
+    position: fixed;
     z-index: 1;
     top: 55%;
     transform: translateY(-50%);

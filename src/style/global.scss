@@ -1,7 +1,11 @@
 
 $theme-color: #050505; // 主题色
 $theme-reverse-color: #ffffff;
-$theme-light-color:#E3E3E3;
+$theme-light-color:transparent;
+
+
+$barHeight: 103.7px; // 顶部bar的高度
+
 // flex居中
 @mixin flex-center ($vertical: false){
   display: flex;
@@ -30,4 +34,9 @@ $theme-light-color:#E3E3E3;
 @font-face {
     font-family: 'lattice';
     src: url(@/assets/fonts/lattice.ttf) format('trueType');
+}
+
+@font-face {
+    font-family: 'trick-shot';
+    src: url(@/assets/fonts/TrickShot.ttf) format('truetype');
 }

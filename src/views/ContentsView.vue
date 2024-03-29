@@ -2,24 +2,26 @@
     <div class="contentBlock">
         <div class="leftBar">
             <div class="list">
-                <div @click="tabClicked(index)" class="item" :class="{ active: activeIndex == index }"
-                    v-for="(text, index) in items" :key="index">
+                <div @click="tabClicked(index)" class="item" :class="{ active: status.getCurInfoIndex() == index }"
+                    v-for="(text, index) in hackDayInfo.getTitles()" :key="index">
                     {{ text }}
                 </div>
             </div>
         </div>
-        <contents :infoItem="{ title: items[activeIndex], index: '0' + (activeIndex + 1) }"></contents>
+        <contents :infoItem="hackDayInfo.getInfo(status.getCurInfoIndex())"></contents>
     </div>
 
 </template>
 <script setup>
 import { ref } from 'vue'
+import { useStatusStore, useHackDayInfo } from "@/store"
 
-const items = ref(['介绍', '流程', '奖项', '问题', '我们'])
-const activeIndex = ref(0);
+const status = useStatusStore()
+const hackDayInfo = useHackDayInfo()
+
 
 const tabClicked = (i) => {
-    activeIndex.value = i;
+    status.setCurInfoIndex(i)
 }
 
 
@@ -27,16 +29,20 @@ const tabClicked = (i) => {
 <style lang="scss" scoped>
 .contentBlock {
     position: relative;
-    display: flex;
-    justify-content: space-between;
+    @include flex-between();
+    // display: flex;
+    // justify-content: space-between;
     $paddingLeft: 3.6vw;
-    $paddingTop: 14vh;
+    // $paddingTop: 14vh;
     background-color: $theme-light-color;
-    width: calc(100vw - $paddingLeft);
-    height: calc(100vh - $paddingTop);
-    padding-top: $paddingTop;
-    padding-left: $paddingLeft;
-
+    // width: calc(100vw - $paddingLeft);
+    // height: calc(100vh - $paddingTop);;
+    width: calc(100vw - 2 * $paddingLeft);
+    height: 100vh;
+    // padding-top: $paddingTop;
+    padding: 0 $paddingLeft;
+    
+    overflow: hidden;
     .leftBar {
         width: 12vh;
         height: 80vh;

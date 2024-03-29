@@ -4,6 +4,7 @@ export const useStatusStore = defineStore({
     id: "status",
     state: () => ({
         isShowCover: false, // show toc or not
+        curInfoIndex: 0, // current info's index, start at zero
     }),
     actions:{
         setIsShowCover(isShow){
@@ -12,6 +13,12 @@ export const useStatusStore = defineStore({
         getIsShowCover(){
             return this.isShowCover;
         },
+        getCurInfoIndex(){
+            return this.curInfoIndex
+        },
+        setCurInfoIndex(index){
+            this.curInfoIndex = index;
+        }
     }
 
 

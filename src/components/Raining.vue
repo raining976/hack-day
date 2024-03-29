@@ -1,6 +1,6 @@
 <style scoped lang="scss">
 
-$rainingColor: #333333;
+$rainingColor: #000;
 
 .snowContainer .cloud {
    
