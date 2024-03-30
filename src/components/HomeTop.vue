@@ -1,6 +1,6 @@
 <template>
     <div class="homeTop">
-        <div class="navBar">
+        <div class="navBar" id="navBar">
             <div class="iconBox">
                 <div class="itStudio text">
                     ITSTUDIO
@@ -20,7 +20,7 @@
                 <span class="square" :class="{ bigSquare: status.isShowCover }"></span>
             </div>
         </div>
-        <div class="cover">
+        <div class="cover" id="cover">
             <div class="contentBox">
                 <div class="logo">
                     {{ title }}
@@ -36,10 +36,10 @@
                     <div class="text">15</div>
                 </div>
             </div>
-            <div class="arrowDownBox" @click="rollDown">
+            <!-- <div id="arrowDownBox" class="arrowDownBox" @click="rollDown">
                 <div class="arrowDown"></div>
                 <div class="text">点我向下滚动～</div>
-            </div>
+            </div> -->
         </div>
     </div>
 
@@ -80,6 +80,7 @@ const rollDown = () => {
 <style lang="scss" scoped>
 $r: 100px; // 探照灯半径
 $hackFontSize: 117px;
+
 .homeTop {
     @include flex-between(true);
     width: 100vw;
@@ -200,7 +201,7 @@ $hackFontSize: 117px;
                 top: 0;
                 color: transparent;
                 /* 半径为40px x为0 y居中的圆 */
-                
+
                 clip-path: ellipse(100px 100px at 0% 50%);
                 animation: move 5s linear infinite;
                 /* 可以将文字颜色改为背景图颜色 操作如下(文字颜色为透明) */
@@ -297,5 +298,113 @@ $hackFontSize: 117px;
     100% {
         clip-path: ellipse($r $r at 0% 50%);
     }
+}
+
+@media screen and (max-width: 1200px) {
+    #cover {
+        .logo {
+            transform: scale(0.8);
+        }
+
+        .line {
+            width: 50vw;
+        }
+
+        .textBox {
+            .text {
+                font-size: 3.5vw;
+            }
+        }
+    }
+}
+
+
+@media screen and (max-width: 768px) {
+    $barHeight: $barHeight*0.7;
+
+    #navBar {
+
+        height: $barHeight;
+        padding: 10px 10px;
+
+        .iconBox {
+            @include flex-center();
+
+            .dot {
+                width: 15px;
+                height: 15px;
+                margin: 20px;
+            }
+
+            .text {
+                font-size: 40px;
+            }
+        }
+
+        .btnBox {
+            transform: scale(0.8);
+        }
+    }
+
+
+    #cover {
+        .logo {
+            transform: scale(0.7);
+        }
+
+        .line {
+            width: 500px
+        }
+
+        .textBox {
+            .text {
+                font-size: 40px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 500px) {
+    #navBar {
+        .iconBox {
+            @include flex-center();
+
+            .dot {
+                width: 10px;
+                height: 10px;
+
+                margin: 20px;
+            }
+
+            .text {
+                font-size: 30px;
+            }
+        }
+
+        .btnBox {
+            transform: scale(0.6);
+        }
+    }
+
+    #cover {
+        .logo {
+            transform: scale(0.4);
+        }
+
+        .line {
+            width: 300px
+        }
+
+        .textBox {
+            .text {
+                font-size: 30px;
+            }
+        }
+
+        #arrowDownBox {
+            transform: scale(0.8) !important;
+        }
+    }
+
 }
 </style>

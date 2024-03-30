@@ -4,18 +4,23 @@
       <!-- <div class="leftLogoText">
       HACKDAY
     </div> -->
-      <div class="rightContent">
-        <div class="title">
-          TOC
+      <div class="rightContent" id="rightContent">
+        <div class="titleBox">
+          <div class="title">
+            TOC
+          </div>
         </div>
-        <div class="tocContent">
+        <div class="tocContent" id="tocContent">
           <div class="list">
-            <div class="tocItem" v-for="(item, index) in hackDayInfo.tocs" :key="index" @click="tocClicked(index)">
+            <div id="tocItem" class="tocItem" v-for="(item, index) in hackDayInfo.tocs" :key="index"
+              @click="tocClicked(index)">
               <span class="textBox">
                 <span class="line"></span>
                 {{ item.title }}
-                /
-                {{ item.title_en }}
+                <span id="enTitle">
+                  /
+                  {{ item.title_en }}
+                </span>
               </span>
             </div>
           </div>
@@ -128,17 +133,20 @@ const scrollTo = (h) => {
     }
 
     .tocContent {
-      padding: 50px 200px;
+      padding: 50px 220px;
 
       .list {
         display: flex;
         flex-direction: column;
+        justify-content: space-between;
+        height: 50vh;
 
         .tocItem {
-          padding: 12px 0;
+          // padding: 12px 0;
           cursor: pointer;
 
-          .textBox {
+          .textBox,
+          .textBox span {
             display: inline-block;
             color: #000000;
             font-family: 'lattice';
@@ -211,5 +219,55 @@ const scrollTo = (h) => {
 .fade-leave-to {
   opacity: 0;
   transform: scale(0.9);
+}
+
+
+@media screen and (max-width: 1200px) {
+  #tocContent {
+    padding: 60px 70px;
+  }
+
+  #tocItem {
+    transform: scale(0.9);
+  }
+}
+
+@media screen and (max-width: 720px) {
+  #rightContent .titleBox {
+    display: flex;
+    justify-content: center;
+
+    .title {
+      transform: scale(1.5);
+      margin: 0;
+      margin-top: 50px;
+      
+    }
+  }
+
+  #tocContent {
+    padding: 70px 20px;
+  }
+
+  #tocItem {
+    transform: scale(0.8);
+  }
+
+}
+
+@media screen and (max-width: 500px) {
+  #rightContent .titleBox {
+    .title {
+      transform: scale(2);
+      margin-top: 50px;
+    }
+  }
+
+  #enTitle {
+    display: none;
+  }
+  #tocContent {
+    padding: 70px 50px;
+  }
 }
 </style>

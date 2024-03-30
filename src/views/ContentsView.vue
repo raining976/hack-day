@@ -1,5 +1,5 @@
 <template>
-    <div class="contentBlock">
+    <div class="contentBlock" id="contentBlock">
         <div class="leftBar">
             <div class="list">
                 <div @click="tabClicked(index)" class="item" :class="{ active: status.getCurInfoIndex() == index }"
@@ -41,8 +41,9 @@ const tabClicked = (i) => {
     height: 100vh;
     // padding-top: $paddingTop;
     padding: 0 $paddingLeft;
-    
+
     overflow: hidden;
+
     .leftBar {
         width: 12vh;
         height: 80vh;
@@ -83,5 +84,45 @@ const tabClicked = (i) => {
         }
     }
 
+}
+
+@media screen and (max-width: 768px) {
+    #contentBlock {
+        padding: 0;
+        width: 100vw;
+        @include flex-center(true);
+        .leftBar {
+            width: 500px;
+            padding: 0 20px;
+            height: 60px;
+            margin-bottom: 20px;
+        }
+        .leftBar .list {
+            padding: 0;
+            flex-direction: row;
+            align-items: center;
+            width: 100%;
+            height: 100%;
+            .item{
+                font-size: 20px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 500px) {
+    #contentBlock {
+        padding: 0;
+        width: 100vw;
+        @include flex-center(true);
+        .leftBar {
+            width: 300px;
+        }
+        .leftBar .list {
+            .item{
+                font-size: 18px;
+            }
+        }
+    }
 }
 </style>

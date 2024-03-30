@@ -70,7 +70,7 @@ export const useHackDayInfo = defineStore({
                         text: "比赛地点：中国海洋大学五八工坊，周四周五周六三天需要每个小组有成员在五八工坊。选手根据主题自由发挥，但不得违背比赛规则，危害社会公序良俗。我们提供水果饮料，零食等食品，这是一大特色。",
                     },
                     {
-                        subtitle: "5.提交演示作品大会初步审核入选",
+                        subtitle: "5.提交演示作品",
                         des: "时间：4月20日12：00",
                         text: "提交作品演示方式：发送到邮箱luxiuzhe@stu.ouc.edu.cn",
                     },
@@ -176,10 +176,21 @@ export const useHackDayInfo = defineStore({
                 title_en: "Contact",
                 texts: [
                     {
-                        subtitle: "",
+                        subtitle: "QQ群二维码",
                         des: "",
-                        text: "OUC Hackday是中国海洋大学爱特工作室（ITStudio）发起举办的Hackday活动，是一个证明你是设计天才或创新思维者的平台，是一个让学生极客挑战极限的Hackday类竞赛。这将不仅仅是一个比赛，更是一个彼此学习、共同成长的机会。你将结识志同道合的伙伴，拓宽你的技术人脉圈，探索技术学习领域的更多可能。"
-                    }
+                        text: ""
+                    },
+                    {
+                        subtitle: "QQ群号：",
+                        des: "523828089",
+                        text: ""
+                    },
+                    {
+                        subtitle: "一键入群",
+                        des: "",
+                        text: ""
+                    },
+
                 ]
             }
         ],
