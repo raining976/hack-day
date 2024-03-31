@@ -12,33 +12,30 @@
         </div>
         <div class="sponsorBox" id="sponsorBox">
             <div class="list" v-show="!isSmallScreen">
-                <div v-for="(card, index) in sponsorInfo.getAll()" :key="index" class="card">
-                    <a :href="card.link" target="_blank" class="linkTo">
-                        <div class="contentBox">
-                            <div class="textBox">
-                                <!-- 公司介绍 -->
-                                <div class="name">{{ card.name }}</div>
-                                <div class="intro">{{ card.intro }}</div>
-                            </div>
+                <div v-for="(card, index) in sponsorInfo.getAll()" :key="index" class="card" @click="linkTo(index)">
+                    <div class="contentBox">
+                        <div class="textBox">
+                            <!-- 公司介绍 -->
+                            <div class="name">{{ card.name }}</div>
+                            <div class="intro">{{ card.intro }}</div>
                         </div>
-                        <div class="imgBox">
-                            <img :src="getAssetsImg(card.imgName)" alt="">
-                        </div>
-                    </a>
+                    </div>
+                    <div class="imgBox">
+                        <img :src="getAssetsImg(card.imgName)" alt="">
+                    </div>
+
                 </div>
             </div>
             <div class="list smallList" v-show="isSmallScreen">
-                <div class="smallCard" v-for="(card, index) in sponsorInfo.getAll()" :key="index">
-                    <a :href="card.link" target="_blank" class="link">
-                        <div class="logo">
-                            <img :src="getAssetsImg(card.logo)" alt="">
-                        </div>
-                        <!-- <div class="name">{{ card.name }}</div> -->
-                        <div class="text">
-                            {{ card.name }}
-                        </div>
-
-                    </a>
+                <div class="smallCard" v-for="(card, index) in sponsorInfo.getAll()" :key="index"
+                    @click="linkTo(index)">
+                    <div class="logo">
+                        <img :src="getAssetsImg(card.logo)" alt="">
+                    </div>
+                    <!-- <div class="name">{{ card.name }}</div> -->
+                    <div class="text">
+                        {{ card.name }}
+                    </div>
                 </div>
             </div>
         </div>
@@ -52,7 +49,9 @@ import { useSponsorInfo } from "@/store"
 const sponsorInfo = useSponsorInfo();
 const isSmallScreen = ref(false);
 
-
+const linkTo = (i) => {
+    window.open(sponsorInfo.getAll()[i].link, '_blank')
+}
 onMounted(() => {
     isSmallScreen.value = window.innerWidth < 768
 })
@@ -78,6 +77,8 @@ $padding: 30px;
     }
 
     .sponsorBox {
+        position: relative;
+        z-index: 999;
         height: 70vh;
         width: 85vw;
 
@@ -95,13 +96,13 @@ $padding: 30px;
             padding: 50px 0;
         }
 
-        .smallCard a {
+        .smallCard  {
             @include flex-center();
             width: 100vw;
             background-color: #FFFFFF50;
             backdrop-filter: blur(8px);
             box-shadow: 0px 1px 3px #ffffff70;
-
+            cursor: pointer;
             .logo {
                 @include flex-center();
                 width: 180px;
@@ -217,15 +218,17 @@ $padding: 30px;
         left: 50%;
         transform: translateX(-50%);
         white-space: nowrap;
+
         a {
 
             color: #FFFFFF;
             transition: 0.2s;
-            &:hover{
+
+            &:hover {
                 color: rgb(151, 151, 255);
             }
         }
-        
+
     }
 
 
@@ -358,13 +361,14 @@ $padding: 30px;
         padding: 50px 0;
         height: calc(100vh - 100px);
     }
+
     .beian {
-      
+
         span,
         a {
             font-size: 12px;
         }
-        
+
     }
 }
 </style>
