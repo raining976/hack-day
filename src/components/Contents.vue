@@ -16,7 +16,7 @@
                 </span>
             </div>
             <div class="infoContent"
-                :class="{ awardsClass: infoItem.index == '03', longClass: infoItem.index == '02', faqClass: infoItem.index == '04', contactClass: infoItem.index == '05' }">
+                :class="{ introClass: infoItem.index == '01', awardsClass: infoItem.index == '03', longClass: infoItem.index == '02', faqClass: infoItem.index == '04', contactClass: infoItem.index == '05' }">
                 <div id="textItem" class="textItem" v-for="(text, index) in infoItem.texts" :key="index">
                     <div class="subtitleBox">
                         <div class="subtitle" v-show="!(infoItem.index == '05' && index == 2)">
@@ -28,7 +28,7 @@
                     </div>
                     <div class="text" v-show="text.text != ''">{{ text.text }}</div>
                     <div class="QrBox" v-show="infoItem.index == '05' && index == 0">
-                        <img src="@/assets/imgs/qr.png" alt="">
+                        <img src="@/assets/imgs/qr.webp" alt="">
                     </div>
                 </div>
             </div>
@@ -41,7 +41,6 @@
 </template>
 
 <script setup>
-import { ref } from "vue";
 const props = defineProps({
     infoItem: {
         title: String,
@@ -49,7 +48,6 @@ const props = defineProps({
         title_en: String,
     }
 })
-
 
 
 </script>
@@ -141,13 +139,16 @@ const props = defineProps({
                 .subtitleBox {
                     display: flex;
                     align-items: center;
-                    .qqLink{
+
+                    .qqLink {
                         transition: 0.3s;
                     }
-                    .qqLink:hover{
+
+                    .qqLink:hover {
                         color: rgb(0, 0, 151) !important;
                         transform: scale(1.05);
                     }
+
                     .subtitle {
                         font-weight: 700;
                     }
@@ -225,6 +226,19 @@ const props = defineProps({
 
                 }
             }
+
+            &.faqClass {
+                .textItem .subtitleBox {
+                    .subtitle {
+                        font-size: 18px;
+                    }
+
+                }
+
+                .text {
+                    margin-top: 5px;
+                }
+            }
         }
     }
 
@@ -241,7 +255,8 @@ const props = defineProps({
         .infoContent {
             padding: 15px;
         }
-        .leftLogo{
+
+        .leftLogo {
             font-size: 70px;
             padding: 10px;
         }
@@ -276,6 +291,7 @@ const props = defineProps({
             font-size: 15px;
         }
     }
+
     .faqClass #textItem {
         .subtitle {
             font-size: 16px;
@@ -287,7 +303,8 @@ const props = defineProps({
         }
 
     }
-    #raining{
+
+    #raining {
         transform: scale(0.8);
         right: 60px;
         top: 40px;
@@ -442,6 +459,12 @@ const props = defineProps({
             margin-top: 3px;
             font-size: 12px;
         }
+
+    }
+
+    .introClass {
+        padding-top: 40px;
+        padding-bottom: 40px;
 
     }
 

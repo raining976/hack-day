@@ -1,7 +1,7 @@
 <template>
-    <div class="particle">
+    <div class="particle" >
         <vue-particles id="tsparticles" :options="option" />
-        <img src="@/assets/imgs/cycle_person.png" class="person" alt="">
+        <img src="@/assets/imgs/cycle_person.webp" class="person" alt="">
     </div>
 
 
@@ -554,5 +554,16 @@ onMounted(() => {
     to {
         transform: translate(-50%, -50%) rotate(360deg);
     }
+}
+
+
+@media screen and (max-width:768px) {
+    // .particle{
+    //     display: none !important;
+    // }
+    .person{
+        display: none;
+    }
+
 }
 </style>

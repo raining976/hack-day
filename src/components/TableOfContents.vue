@@ -50,6 +50,10 @@ const tocClicked = (i) => {
       scrollTo(window.innerHeight)
       status.setCurInfoIndex(i - 1);
       break;
+    case 6:
+      scrollTo(window.innerHeight * 2)
+      
+      break
     default:
       break;
   }

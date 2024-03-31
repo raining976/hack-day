@@ -6,18 +6,34 @@ export const useStatusStore = defineStore({
         isShowCover: false, // show toc or not
         curInfoIndex: 0, // current info's index, start at zero
     }),
-    actions:{
-        setIsShowCover(isShow){
+    actions: {
+        setIsShowCover(isShow) {
             this.isShowCover = isShow;
         },
-        getIsShowCover(){
+        getIsShowCover() {
             return this.isShowCover;
         },
-        getCurInfoIndex(){
+        getCurInfoIndex() {
             return this.curInfoIndex
         },
-        setCurInfoIndex(index){
+        setCurInfoIndex(index) {
             this.curInfoIndex = index;
+            //if (index == 0) this.handleJuryTeacher()
+
+        },
+        handleJuryTeacher() {
+            /*
+                       if (!(window.innerWidth < 500 && this.curInfoIndex == 0)) return;
+            const textDom = document.querySelectorAll(".textItem:last-child .text")[0]
+            const text = textDom.innerHTML
+            textDom.innerHTML = null
+            const arr = text.split('，')
+            arr.forEach((t) => {
+                
+        
+            })
+  
+            */
         }
     }
 

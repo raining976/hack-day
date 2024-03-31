@@ -27,7 +27,7 @@ export const useHackDayInfo = defineStore({
                         text: "中国海洋大学在校本科生或研究生",
                     },
                     {
-                        subtitle: "参赛主题：",
+                        subtitle: "比赛主题：",
                         des: "",
                         text: "比赛当天于参赛地点现场揭晓"
                     },
@@ -39,7 +39,7 @@ export const useHackDayInfo = defineStore({
                     {
                         subtitle: "评委组织：",
                         des: "",
-                        text: "青岛海研电子有限公司创始人 温琦、青岛图灵科技有限公司创始人冯栋，青岛算能科技有限公司销售总监 赵浩森，中国海洋大学教授 高峰，中国海洋大学教授 杨永全",
+                        text: "青岛海研电子有限公司创始人 温琦，青岛图灵科技有限公司创始人 冯栋，青岛算能科技有限公司销售总监 赵浩森，中国海洋大学高峰老师，中国海洋大学杨永全老师",
                     }
 
                 ]
@@ -149,7 +149,7 @@ export const useHackDayInfo = defineStore({
                         text: "建议携带：笔记本电脑和充电器，手机和充电器，睡袋，洗漱用品，几件衣服。可以准备好：一个预先组好的队伍，一个好的想法或者思路。请勿携带：有威胁其他人安全的物品，如酒精，动物（无论多么可爱）等。",
                     },
                     {
-                        subtitle: "伍有限制吗？",
+                        subtitle: "队伍有限制吗？",
                         des: "",
                         text: "您可以组成最多5人的队伍。对队伍成员没有限制，所以你可以与任何学校，国家或经验水平的参赛者合作！",
                     },
@@ -221,7 +221,7 @@ export const useHackDayInfo = defineStore({
                 title_en: "Contact",
             },
             {
-                title: "赞助商",
+                title: "特别鸣谢",
                 title_en: "Sponsor",
             }
         ]
