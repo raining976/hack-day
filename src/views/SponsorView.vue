@@ -1,11 +1,5 @@
 <template>
     <div class="sponsorView" id="sponsorView">
-        <div class="beian">
-            <span>Copyright &copy; 2002-2024 ITSTUDIO</span>
-            <a href="https://beian.miit.gov.cn/">
-                桂ICP备2022004639号
-            </a>
-        </div>
         <div class="title">
             <!-- SPECIAL THANKS TO OUR SPONSORS -->
             特别鸣谢
@@ -26,7 +20,7 @@
 
                 </div>
             </div>
-            <div class="list smallList" v-show="isSmallScreen">
+            <div class="smallList" v-show="isSmallScreen">
                 <div class="smallCard" v-for="(card, index) in sponsorInfo.getAll()" :key="index"
                     @click="linkTo(index)">
                     <div class="logo">
@@ -39,6 +33,13 @@
                 </div>
             </div>
         </div>
+        <div class="beian">
+            <span>Copyright &copy; 2002-2024 ITSTUDIO</span>
+            <a href="https://beian.miit.gov.cn/">
+                桂ICP备2022004639号
+            </a>
+        </div>
+
     </div>
 </template>
 <script setup>
@@ -96,13 +97,14 @@ $padding: 30px;
             padding: 50px 0;
         }
 
-        .smallCard  {
+        .smallCard {
             @include flex-center();
             width: 100vw;
             background-color: #FFFFFF50;
             backdrop-filter: blur(8px);
             box-shadow: 0px 1px 3px #ffffff70;
             cursor: pointer;
+
             .logo {
                 @include flex-center();
                 width: 180px;
