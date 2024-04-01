@@ -104,11 +104,10 @@ const scrollTo = (h) => {
 
     .title {
       position: relative;
-      margin-left: 4.5vw;
-      margin-top: 3.1vw;
+      margin: 3vw 4.5vw;
       font-family: 'trick-shot';
       font-weight: bold;
-      font-size: 4.2vw;
+      font-size: 4vw;
       color: #151515;
       font-style: normal;
       z-index: 1;
@@ -137,13 +136,14 @@ const scrollTo = (h) => {
     }
 
     .tocContent {
-      padding: 50px 220px;
+      padding: 0 300px;
 
       .list {
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-        height: 50vh;
+        max-height: 50vh;
+        min-height: 43vh;
 
         .tocItem {
           // padding: 12px 0;
