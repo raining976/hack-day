@@ -17,7 +17,6 @@
                     <div class="imgBox">
                         <img :src="getAssetsImg(card.imgName)" alt="">
                     </div>
-
                 </div>
             </div>
             <div class="smallList" v-show="isSmallScreen">
@@ -66,14 +65,17 @@ $padding: 30px;
 .sponsorView {
 
     position: relative;
-    @include flex-center(true);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
     height: calc(100vh - 2 * $padding);
     padding: $padding 0;
     width: 100vw;
 
     .title {
         // font-family: 'Algerian';
-        font-size: 70px;
+        font-size: 60px;
         color: #FFFFFF;
     }
 
@@ -93,9 +95,13 @@ $padding: 30px;
         }
 
         .smallList {
-            @include flex-center(true);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
             padding: 50px 0;
+            height: 100%;
         }
+
 
         .smallCard {
             @include flex-center();

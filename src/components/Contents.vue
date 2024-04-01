@@ -73,7 +73,7 @@ const props = defineProps({
         text-align: center;
         font-family: 'trick-shot';
         font-weight: bold;
-        font-size: 11vh;
+        font-size: 10vh;
         color: #f5f5f5;
         writing-mode: vertical-rl;
         transform: rotateZ(180deg);
@@ -134,8 +134,9 @@ const props = defineProps({
             background: #F9F9F9;
             border-radius: 15px;
             border: 2px solid #000000;
-
+            overflow-y: auto;
             .textItem {
+                margin: 5px 0;
                 .subtitleBox {
                     display: flex;
                     align-items: center;
@@ -170,7 +171,7 @@ const props = defineProps({
 
 
                 .text {
-                    margin-top: 10px;
+                    margin-top: 5px;
                     text-indent: 30px;
                     font-weight: 500;
                     font-size: 16px;
@@ -206,12 +207,13 @@ const props = defineProps({
                 align-items: flex-start;
 
                 .textItem {
-                    margin: 80px 0;
+                    height: auto;
+                    margin: 40px 0;
                     flex-direction: column;
 
                     .subtitleBox {
                         .subtitle {
-                            margin: 40px 0;
+                            margin: 20px 0;
                         }
 
                         flex-direction: column;
@@ -277,7 +279,10 @@ const props = defineProps({
             font-size: 16px;
         }
     }
-
+    .infoContent.contactClass #textItem {
+        height: auto;
+        margin: 10px 0;
+    }
     .longClass #textItem {
         .subtitle {
             font-size: 16px;
@@ -288,7 +293,7 @@ const props = defineProps({
         }
 
         .text {
-            font-size: 15px;
+            font-size: 13px;
         }
     }
 

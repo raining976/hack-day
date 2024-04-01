@@ -45,7 +45,7 @@ const tabClicked = (i) => {
     overflow: hidden;
 
     .leftBar {
-        width: 12vh;
+        width: 120px;
         height: 80vh;
         background: #151515;
         box-shadow: -1vw 0.3vw 1.6vw 0.1vw rgba(0, 0, 0, 0.17);
@@ -62,7 +62,7 @@ const tabClicked = (i) => {
                 position: relative;
                 font-family: lattice;
                 font-weight: 400;
-                font-size: 28.8px;
+                font-size: 28px;
                 color: #FFFFFF47;
                 cursor: pointer;
 
