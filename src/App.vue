@@ -6,8 +6,12 @@
 </template>
 
 <script setup>
+import { paintedEggShell } from './util/isStudio';
+import { onMounted } from 'vue';
 
-
+onMounted(()=>{
+  paintedEggShell();
+})
 
 </script>
 
